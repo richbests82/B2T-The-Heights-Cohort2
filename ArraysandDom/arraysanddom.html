@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+		<body>
+			<h1 id="text"></h1>
+				<script type="text/javascript">
+			
+					var fruits = ["apple", "orange", "kiwi", "input"];
+					console.log(fruits)
+
+					var input = prompt();
+					fruits.push(input)
+					console.log(fruits)
+					fruits.sort()
+					document.getElementById("text").innerHTML=fruits.join(" with ")
+		
+				</script>
+		</body>
+	</html>
