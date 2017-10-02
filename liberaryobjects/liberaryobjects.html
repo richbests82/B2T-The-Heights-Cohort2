@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		var library = [
+			{author:'bill Gates', title:'The Road Ahead', readingstatus: true},
+
+			{author: 'Steve Jobs', title:'Walter Isaacson',readingStatus: true},
+			{author: 'Suzanne collins',title: 'Mockingjay:The Final Book Of The Hunger Games', readingStatus: false}
+		];
+		//make a loop to get the element in the array
+		for(var i=0; i < library.length;i++)
+		
+			if (library[i].readingStatus==true) {
+				
+				console.log("Already read" + library[i].title + "by" +library[i].author)
+			}
+			else{
+				console.log("You still need to Read" + library[i].title + "by" + library[i].author)
+			}
+
+		</script>
+	</body>
+</html>
