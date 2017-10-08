@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
 	<head>
 		<title>days of the week</title>
@@ -7,12 +6,13 @@
 	<body>
 	<h1 id ="display"></h1>
 		<script type="text/javascript">
-				
+		//getting current date	
 		switch(new Date().getDay()){
 			case 0:
 				console.log('Sunday');
 				document.getElementById('display').innerHTML = 'Happy Sunday'
 				break;
+				//using dom to display each day 
 			case 1:
 				console.log('Monday');
 				document.getElementById('display').innerHTML = 'Happy Monday'
