@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Displaying Names</title>
+	</head>
+		<body>
+			<h1 id="display"></h1>
+			<form>
+				<!--user input to make names-->
+				First name: <input type="text" id="fname" value="Curtis"><br>
+				Last name: <input type="text" id="lname" value="Jackson"><br>
+				<input type="button" value="submit" onclick="getFormValue()">
+			</form>
+			<script type="text/javascript">
+				function getFormValue(){
+					//create two variables for first name and last name
+					//dom to display to webpage
+					var lname = document.getElementById('lname').value;
+					var fname = document.getElementById('fname').value;
+					var fullName = fname + ' ' + lname;
+					document.getElementById("display").innerHTML = "Hello" + '   ' + fullName;
+				}
+			</script>
+
+		</body>
+</html>
