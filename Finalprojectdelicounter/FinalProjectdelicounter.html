@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<style type="text/css">
+			table{width: 400px}
+			input[type=button]{
+				background-color: lightgray;
+
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Local Deli Queue</h1>
+		<!--input to display name and order-->
+		Customer's Name:<input type="text" id="inputName"><br>
+		Customer's Order:<input type="text" id="inputOrder"><br>
+		<!--display button to add and remove elements from to the array-->	
+		<input type="button" value="Add Customer" onclick="addingnameorder()"><br>
+
+		<input type="button" value="Customer Served" onclick="served()">
+
+
+		<br><br>
+		<!--text display -->
+		<h3 id="servedisplay"></h3>
+		<table border="3" id="display">
+			<tr>
+				<th>position</th>
+				<th>Name</th>
+				<th>Order</th>
+			</tr>
+
+		</table>
+		
+
+		<script type="text/javascript">
+			//array that holds objects of name and order.
+			var displayOrder = [];
+			//adding inputs to the array.
+			function addingnameorder(){
+				//create an object with the properties name and order 
+				var custOrder = {
+					 Name: document.getElementById('inputName').value,
+					 Order: document.getElementById('inputOrder').value,
+				};
+				//adds objects to the array.
+				displayOrder.push(custOrder);
+				displayarray()
+				
+			}
+			//removes elements from the array and displays on a web page
+			function served(){
+				var removedorder= displayOrder.shift();
+				//if the array is empty display this
+				if (displayOrder.length==0){
+					document.getElementById("servedisplay").innerHTML='The line is empty.'
+				//if the array is not empty display this
+				}else{
+					document.getElementById("servedisplay").innerHTML=removedorder.Name + '  was served  '+ removedorder.Order
+				}
+				//display the array on  a table
+				displayarray()
+
+			}
+			//display elements in the array on the table
+			function displayarray(){
+				//adding the header to the table 
+				document.getElementById('display').innerHTML = "";
+				var tr =document.createElement("tr")
+				document.getElementById("display").appendChild(tr)
+				var td =document.createElement("th")
+				var td1 =document.createElement("th")
+				var td2 =document.createElement("th")
+				tr.appendChild(td)
+				tr.appendChild(td1)
+				tr.appendChild(td2)
+				//putting text in the table header
+				td.innerHTML='position'
+				td1.innerHTML='Name'
+				td2.innerHTML='Order'
+				//looping through the array displaying the objects of the array on the table
+				for(var i = 0; i < displayOrder.length; i++){
+					var tr =document.createElement("tr")
+					document.getElementById("display").appendChild(tr)
+					var td =document.createElement("td")
+					var td1 =document.createElement("td")
+					var td2 =document.createElement("td")
+					tr.appendChild(td)
+					tr.appendChild(td1)
+					tr.appendChild(td2)
+					//using index of the element as its position  
+					td.innerHTML=i+1
+					//getting the element properties and displaying them on table data
+					td1.innerHTML=displayOrder[i].Name
+					td2.innerHTML=displayOrder[i].Order
+
+					
+				}
+
+			}
+			
+		</script>
+		
+	</body>
+
+</html>
